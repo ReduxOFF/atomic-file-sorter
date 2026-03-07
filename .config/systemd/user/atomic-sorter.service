@@ -1,0 +1,11 @@
+[Unit]
+Description=Atomic File Sorter
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 %h/.config/systemd/user/atomic-file-sorter/watcher.py
+WorkingDirectory=%h/.config/systemd/user/atomic-file-sorter/
+Restart=always
+
+[Install]
+WantedBy=default.target
